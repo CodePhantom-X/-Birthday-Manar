@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#14051f" />
+  <title>Birthday Manar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Playfair+Display:wght@600;700;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+  <canvas id="starCanvas" aria-hidden="true"></canvas>
+  <canvas id="fxCanvas" aria-hidden="true"></canvas>
+  <div id="cursorGlow" aria-hidden="true"></div>
+
+  <div class="splash" id="splash">
+    <div class="loader-shell">
+      <div class="loader-ring"></div>
+      <span>Birthday Experience</span>
+    </div>
+  </div>
+
+  <main class="app">
+    <section class="scene scene-gift is-active" id="giftScene" aria-label="صفحة الهدية">
+      <div class="glass gift-card">
+        <div class="gift-icon" aria-hidden="true">🎁</div>
+        <h1>لديك مفاجأة خاصة...</h1>
+        <button class="primary-btn" id="openGiftBtn" type="button">
+          <span>افتح الهدية</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="scene scene-birthday" id="birthdayScene" aria-label="احتفال عيد الميلاد">
+      <header class="topbar">
+        <div class="brand">Manar Birthday</div>
+        <div class="music-controls" aria-label="أزرار الموسيقى">
+          <button class="icon-btn" id="playMusicBtn" type="button" title="تشغيل الموسيقى">🔊</button>
+          <button class="icon-btn" id="stopMusicBtn" type="button" title="إيقاف الموسيقى">🔇</button>
+          <button class="icon-btn" id="shareBtn" type="button" title="مشاركة الصفحة">↗</button>
+          <button class="icon-btn" id="replayBtn" type="button" title="إعادة الاحتفال">⟳</button>
+        </div>
+      </header>
+
+      <div class="birthday-layout">
+        <section class="profile-panel reveal">
+          <div class="portrait-ring">
+            <div class="portrait-glow"></div>
+            <img src="assets/images/manar.png" alt="صورة منار" id="profileImage" />
+            <div class="portrait-fallback" id="portraitFallback">م</div>
+          </div>
+          <h2 class="arabic-name">✨ منــار ✨</h2>
+          <p class="age">21 سنة</p>
+        </section>
+
+        <section class="countdown-panel glass reveal" id="countdownPanel">
+          <p class="eyebrow">العد التنازلي إلى بداية 8 July</p>
+          <div class="countdown" id="countdown">
+            <div class="time-card"><strong id="days">00</strong><span>Days</span></div>
+            <div class="time-card"><strong id="hours">00</strong><span>Hours</span></div>
+            <div class="time-card"><strong id="minutes">00</strong><span>Minutes</span></div>
+            <div class="time-card"><strong id="seconds">00</strong><span>Seconds</span></div>
+          </div>
+        </section>
+
+        <section class="message-panel glass reveal" id="messagePanel" aria-live="polite">
+          <p class="typed-message" id="typedMessage"></p>
+          <div class="final-title" id="finalTitle">
+            <h2>🎉 Happy Birthday 🎉</h2>
+            <p>Happy 21st Birthday<br /><span>Manar</span></p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
+  <audio id="birthdayMusic" src="assets/music/birthday.mp3" preload="auto" loop></audio>
+  <script src="script.js"></script>
+</body>
+</html>
